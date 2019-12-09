@@ -1,5 +1,5 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+{{fullName}}
 
-{{outlet}}
+<button {{on "click" (fn this.updateAttr "firstName" "First")}}>
+  Update first name
+</button>
