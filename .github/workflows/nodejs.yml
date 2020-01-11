@@ -25,13 +25,13 @@ jobs:
     needs: build
     steps:
       - name: lint:js
-      - run: npm lint:js
+        run: npm lint:js
 
       - name: lint:hbs
-      - run: npm lint:hbs
+        run: npm lint:hbs
 
   test:
     needs: [lint, build]
     steps:
       - name: test
-      - run: npm test -- -r dot
+        run: npm test -- -r dot
