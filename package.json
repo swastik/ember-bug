@@ -13,9 +13,9 @@
   "scripts": {
     "build": "ember build -e test",
     "lint:hbs": "ember-template-lint .",
-    "lint:js": "eslint .",
+    "lint:js": "./node_modules/eslint/bin/eslint .",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "./node_modules/ember-cli/bin/ember test"
   },
   "devDependencies": {
     "@ember/optional-features": "^1.0.0",
