@@ -3,7 +3,6 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -19,7 +18,20 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm ci
-        npm run build --if-present
-        npm test -- -r dot
       env:
         CI: true
+
+  lint:
+    needs: build
+    steps:
+      - name: lint:js
+      - run: npm lint:js
+
+      - name: lint:hbs
+      - run: npm lint:hbs
+
+  test:
+    needs: [lint, build]
+    steps:
+      - name: test
+      - run: npm test -- -r dot
