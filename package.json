@@ -13,7 +13,7 @@
   "scripts": {
     "build": "ember build -e test",
     "lint:hbs": "ember-template-lint .",
-    "lint:js": "./node_modules/eslint/bin/eslint .",
+    "lint:js": "./node_modules/eslint/bin/eslint.js .",
     "start": "ember serve",
     "test": "./node_modules/ember-cli/bin/ember test"
   },
