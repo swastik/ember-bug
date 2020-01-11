@@ -11,8 +11,6 @@ export default class ApplicationController extends Controller {
 
   @action
   updateAttr(attr, value) {
-    console.log(attr, value);
     set(this.model, attr, value);
-    console.log(this.model);
   }
 }
