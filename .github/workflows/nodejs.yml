@@ -15,7 +15,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-        
+
     - name: Cache node modules
       uses: actions/cache@v1
       with:
@@ -24,11 +24,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
-          ${{ runner.os }}-:  
-          
+          ${{ runner.os }}-:
+
     - name: npm ci
-      run: |
-        npm ci
+      run: npm ci
       env:
         CI: true
 
@@ -38,6 +37,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+
+      - name: npm ci
+        run: npm ci
+        env:
+          CI: true
+
       - name: lint:js
         run: npm run lint:js
 
@@ -47,5 +52,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+
+      - name: npm ci
+        run: npm ci
+        env:
+          CI: true
+
       - name: test
         run: npm test -- -r dot
